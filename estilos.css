@@ -1,0 +1,412 @@
+body {
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #ffe0ef 0%, #e3f0ff 100%);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow-x: hidden;
+}
+header {
+    text-align: center;
+    padding: 2rem 1rem 1rem 1rem;
+    background: linear-gradient(90deg, #ec407a 60%, #42a5f5 100%);
+    color: #fff;
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+    box-shadow: 0 4px 16px #e3f0ff;
+}
+.header-fondo h1 {
+    font-size: 2.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+.header-fondo .subtitulo {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+.contador-apoyo-box, .tip-dia-box {
+    background: #fff;
+    color: #ec407a;
+    border-radius: 16px;
+    padding: 0.7rem 1.2rem;
+    display: inline-block;
+    font-size: 1.1rem;
+    margin: 0.5rem 0.5rem;
+    box-shadow: 0 2px 8px #f8bbd0;
+}
+.boton-wp-central {
+    margin-top: 1.5rem;
+}
+.boton-wp {
+    background: linear-gradient(90deg, #ec407a 60%, #42a5f5 100%);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-family: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 16px #691734;
+    margin: 0;
+    cursor: pointer;
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7em;
+}
+.boton-wp:hover {
+    background: linear-gradient(90deg, #ad1457 60%, #1976d2 100%);
+    color: #fff;
+    transform: scale(1.05);
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    background: #fff;
+    padding: 1.2rem 0;
+    box-shadow: 0 2px 8px #e3f0ff;
+    border-radius: 0 0 32px 32px;
+}
+nav button {
+    background: linear-gradient(90deg, #ec407a 60%, #42a5f5 100%);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.7rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px #f8bbd0;
+}
+nav button:hover {
+    background: linear-gradient(90deg, #ad1457 60%, #1976d2 100%);
+    transform: scale(1.07);
+}
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 4px 24px #e3f0ff;
+    padding: 2.5rem;
+}
+.seccion {
+    display: none;
+    animation: fadeIn 0.7s;
+}
+.seccion.activa {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+img {
+    display: block;
+    margin: 1.2rem auto;
+    max-width: 95%;
+    height: auto;
+    border-radius: 16px;
+    border: 2px solid #e3f0ff;
+    box-shadow: 0 2px 12px #e3f0ff;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 4px 24px #ec407a55;
+}
+blockquote {
+    border-left: 4px solid #42a5f5;
+    margin: 1rem 0;
+    padding-left: 1rem;
+    color: #ad1457;
+    font-style: italic;
+    font-size: 1.1rem;
+    background: #f3f8ff;
+    border-radius: 8px;
+}
+ul {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+.boton-youtube {
+    background: linear-gradient(90deg, #ff0000 60%, #42a5f5 100%);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 0.8rem 2.2rem;
+    font-size: 1.15rem;
+    font-family: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px #c62828;
+    margin: 1rem 0.5rem 1rem 0;
+    cursor: pointer;
+    display: inline-block;
+}
+.boton-youtube:hover {
+    background: linear-gradient(90deg, #c62828 60%, #1976d2 100%);
+    transform: scale(1.07);
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+input, textarea {
+    border: 1px solid #e3f0ff;
+    border-radius: 8px;
+    padding: 0.7rem;
+    font-size: 1.1rem;
+    background: #f8faff;
+    transition: border 0.2s;
+}
+input:focus, textarea:focus {
+    border: 1.5px solid #42a5f5;
+    outline: none;
+}
+button[type="submit"] {
+    background: linear-gradient(90deg, #ec407a 60%, #42a5f5 100%);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #f8bbd0;
+    transition: background 0.2s, transform 0.2s;
+}
+button[type="submit"]:hover {
+    background: linear-gradient(90deg, #ad1457 60%, #1976d2 100%);
+    transform: scale(1.05);
+}
+footer {
+    text-align: center;
+    background: linear-gradient(90deg, #ec407a 60%, #42a5f5 100%);
+    padding: 1.5rem;
+    color: #fff;
+    margin-top: 2rem;
+    border-radius: 0 0 24px 24px;
+    font-size: 1.15rem;
+    box-shadow: 0 2px 8px #e3f0ff;
+}
+.oculto {
+    display: none;
+}
+.icono-blanco {
+    color: #fff;
+    font-size: 1.3em;
+    vertical-align: middle;
+    margin-right: 0.5em;
+}
+/* Puedes agregar más estilos personalizados según lo que quieras destacar */
+    max-width: 220px; #ec407a;
+    text-align: center;
+    transition: transform 0.2s;
+}   font-size: 0.95rem;
+.testimonio-foto img {
+    width: 70px;em 0;
+    height: 70px;
+    object-fit: cover;{
+    border-radius: 50%;
+    margin-bottom: 0.7rem;
+    border: 2px solid #ec407a;
+}   margin-top: 0.5rem;
+.testimonio-foto blockquote {
+    font-size: 0.95rem;
+    color: #ad1457;
+    margin: 0.5rem 0;
+}
+.testimonio-foto span {
+    display: block;
+    font-size: 0.9rem;nav button, .whatsapp-btn, button[type="submit"] {
+    color: #333;
+    margin-top: 0.5rem;
+}
+
+
+
+
+}    box-shadow: 0 2px 8px rgba(236, 64, 122, 0.15);nav button, .whatsapp-btn, button[type="submit"] {}    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;    box-shadow: 0 2px 8px rgba(236, 64, 122, 0.15);
+}
+}
+}
+}
+.icono-rosa {
+    color: #ec407a;
+    font-size: 1.4em;
+    vertical-align: middle;
+    margin-right: 0.5em;
+}
+.boton-wp-central {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0 0 0;
+}
+.boton-wp {
+    background: #7e1a3b;
+    color: #746c6c;
+    border: none;
+    border-radius: 25px;
+    padding: 0.9rem 2.2rem;
+    font-size: 1.1rem;
+    font-family: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.2s, color 0.2s;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 8px #691734;
+    margin: 0;
+    cursor: pointer;
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7em;
+}
+.boton-wp:hover {
+    background: #ad1457;
+    color: #fff;
+    text-decoration: none;
+}
+.icono-blanco {
+    color: #fff;
+    font-size: 1.3em;
+    vertical-align: middle;
+    margin-right: 0.5em;
+}
+.boton-youtube {
+    background: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 0.7rem 2rem;
+    font-size: 1.1rem;
+    font-family: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px #c62828;
+    margin: 1rem auto;
+    cursor: pointer;
+    display: inline-block;
+}
+.boton-youtube:hover {
+    background: #c62828;
+    transform: scale(1.04);
+}
+
+/* Fondo animado con burbujas */
+.fondo-burbujas {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+.burbuja {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.25;
+    animation: burbujasAnim 18s linear infinite;
+    background: linear-gradient(135deg, #ec407a 60%, #42a5f5 100%);
+}
+@keyframes burbujasAnim {
+    0% { transform: translateY(0) scale(1);}
+    100% { transform: translateY(-100vh) scale(1.2);}
+}
+
+/* Iconos SVG */
+.icono-svg {
+    width: 2em;
+    height: 2em;
+    vertical-align: middle;
+    margin-right: 0.5em;
+    fill: #ec407a;
+    transition: fill 0.2s;
+}
+.icono-svg.azul { fill: #42a5f5; }
+.icono-svg.verde { fill: #43d19e; }
+.icono-svg.rosa { fill: #ec407a; }
+.icono-svg:hover { fill: #ad1457; }
+
+/* --- Estilos responsivos para notebook y celular --- */
+@media (max-width: 900px) {
+    main {
+        max-width: 98vw;
+        padding: 1.2rem;
+    }
+    header {
+        padding: 1.2rem 0.5rem 0.5rem 0.5rem;
+        border-bottom-left-radius: 18px;
+        border-bottom-right-radius: 18px;
+    }
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.8rem 0;
+        border-radius: 0 0 18px 18px;
+    }
+    nav button {
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 1rem 0.3rem 0.3rem 0.3rem;
+        font-size: 1rem;
+    }
+    .header-fondo h1 {
+        font-size: 1.5rem;
+    }
+    .header-fondo .subtitulo {
+        font-size: 1rem;
+    }
+    main {
+        padding: 0.7rem;
+        border-radius: 12px;
+    }
+    .boton-wp, .boton-youtube, nav button, button[type="submit"] {
+        font-size: 1rem;
+        padding: 0.6rem 1rem;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    blockquote {
+        font-size: 1rem;
+        padding-left: 0.5rem;
+    }
+    ul {
+        font-size: 1rem;
+    }
+    footer {
+        font-size: 1rem;
+        padding: 1rem;
+        border-radius: 0 0 12px 12px;
+    }
+    .contador-apoyo-box, .tip-dia-box {
+        font-size: 1rem;
+        padding: 0.5rem 0.7rem;
+        border-radius: 10px;
+    }
+}
