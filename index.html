@@ -1,67 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Concientización sobre el Cáncer de Mama en Argentina</title>
-    <link rel="stylesheet" href="estilos.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="whatsapp.png">
+    <link rel="stylesheet" href="estilos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="whatsapp.png" />
 </head>
 <body>
-    git init    <div class="fondo-burbujas">
-        <span class="burbuja" style="left:10vw;top:80vh;width:60px;height:60px;animation-delay:0s;"></span>
-        <span class="burbuja" style="left:30vw;top:90vh;width:40px;height:40px;animation-delay:2s;"></span>
-        <span class="burbuja" style="left:60vw;top:85vh;width:80px;height:80px;animation-delay:4s;"></span>
-        <span class="burbuja" style="left:80vw;top:95vh;width:50px;height:50px;animation-delay:6s;"></span>
-        <span class="burbuja" style="left:50vw;top:92vh;width:70px;height:70px;animation-delay:8s;"></span>
+    <div class="fondo-burbujas">
+        <span class="burbuja burbuja-1"></span>
+        <span class="burbuja burbuja-2"></span>
+        <span class="burbuja burbuja-3"></span>
+        <span class="burbuja burbuja-4"></span>
+        <span class="burbuja burbuja-5"></span>
     </div>
+
     <header class="header-fondo">
-        <div style="display:flex;justify-content:center;align-items:center;gap:1rem;">
+        <div class="encabezado-principal">
             <svg class="icono-svg rosa" viewBox="0 0 64 64" width="48" height="48">
-                <circle cx="32" cy="32" r="28" fill="#ec407a" opacity="0.15"/>
-                <path d="M32 12c8 0 14 6 14 14 0 8-6 14-14 14s-14-6-14-14c0-8 6-14 14-14zm0 6a8 8 0 0 0-8 8c0 4.42 3.58 8 8 8s8-3.58 8-8a8 8 0 0 0-8-8z" fill="#ec407a"/>
-                <path d="M32 40c-6 0-12 3-12 7v3h24v-3c0-4-6-7-12-7z" fill="#ad1457"/>
+                <circle cx="32" cy="32" r="28" fill="#ec407a" opacity="0.15" />
+                <path d="M32 12c8 0 14 6 14 14 0 8-6 14-14 14s-14-6-14-14c0-8 6-14 14-14zm0 6a8 8 0 0 0-8 8c0 4.42 3.58 8 8 8s8-3.58 8-8a8 8 0 0 0-8-8z" fill="#ec407a" />
+                <path d="M32 40c-6 0-12 3-12 7v3h24v-3c0-4-6-7-12-7z" fill="#ad1457" />
             </svg>
             <h1>Unidas por la Vida</h1>
         </div>
         <p class="subtitulo">Concientización sobre el Cáncer de Mama en Argentina</p>
+
         <div class="contador-apoyo-box">
             <span class="contador-label">Personas apoyadas:</span>
             <span id="contador-apoyo">0</span>
         </div>
+
         <div class="tip-dia-box">
             <span class="tip-label">Tip del día:</span>
             <span id="tip-dia"></span>
         </div>
+
         <div class="boton-wp-central">
             <a href="https://wa.me/549XXXXXXXXXX" class="boton-wp" target="_blank">
                 <span class="icono-blanco">❤</span> HABLÁ CON NOSOTRAS
             </a>
         </div>
     </header>
+
     <nav>
-        <button onclick="mostrarSeccion('info')">¿Qué es el cáncer de mama?</button>
-        <button onclick="mostrarSeccion('ayuda')">¿Cómo puedo ayudar?</button>
-        <button onclick="mostrarSeccion('historias')">Historias de esperanza</button>
-        <button onclick="mostrarSeccion('recursos')">Recursos en Argentina</button>
-        <button onclick="mostrarSeccion('contacto')">Contacto</button>
+        <button data-seccion="info">¿Qué es el cáncer de mama?</button>
+        <button data-seccion="ayuda">¿Cómo puedo ayudar?</button>
+        <button data-seccion="historias">Historias de esperanza</button>
+        <button data-seccion="recursos">Recursos en Argentina</button>
+        <button data-seccion="contacto">Contacto</button>
     </nav>
+
     <main>
         <section id="info" class="seccion activa">
-            <h2>
-                <svg class="icono-svg rosa" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                ¿Qué es el cáncer de mama?
-            </h2>
-            <img src="imagen2.jpg" alt="Información sobre cáncer de mama" style="max-width:100%;border-radius:12px;margin-bottom:1rem;">
+            <h2>¿Qué es el cáncer de mama?</h2>
+            <img src="imagen2.jpg" alt="Información sobre cáncer de mama" class="img-seccion" />
             <p>El cáncer de mama es el tipo de cáncer más frecuente en las mujeres argentinas. La detección temprana salva vidas. Informate, cuidate y compartí este mensaje.</p>
-            <a class="boton-youtube" href="https://www.youtube.com/watch?v=ebccohv9RF0" target="_blank">
-                Ver video informativo en YouTube
-            </a>
+            <a class="boton-youtube" href="#" target="_blank">Ver video informativo en YouTube</a>
         </section>
+
         <section id="ayuda" class="seccion">
             <h2>¿Cómo puedo ayudar?</h2>
-            <img src="imagen4.jpg" alt="Cómo ayudar" style="max-width:100%;border-radius:12px;margin-bottom:1rem;">
+            <img src="imagen4.jpg" alt="Cómo ayudar" class="img-seccion" />
             <ul>
                 <li>Informate y compartí información confiable.</li>
                 <li>Participá en campañas de prevención.</li>
@@ -69,57 +71,50 @@
                 <li>Escuchá y acompañá a quienes lo necesitan.</li>
             </ul>
         </section>
+
         <section id="historias" class="seccion">
             <h2>Historias de esperanza</h2>
-            <img src="imagen1.jpg" alt="Testimonio de esperanza 1" style="max-width:100%;border-radius:12px;margin-bottom:1rem;">
-            <blockquote>
-                “Nunca imaginé la fuerza que tenía hasta que la vida me puso a prueba. Hoy celebro cada día.” – Ana, Córdoba
-            </blockquote>
-            <blockquote>
-                “El apoyo de mi familia y amigas fue fundamental. No estás sola.” – Laura, Buenos Aires
-            </blockquote>
-            <a class="boton-youtube" href="https://www.youtube.com/watch?v=Rkhaq1yW8G8" target="_blank">
-                Ver Testimonio en YouTube 1
-            </a>
-            <a class="boton-youtube" href="https://www.youtube.com/watch?v=y48E3LwswMk" target="_blank">
-                Ver Testimonio en YouTube 2
-            </a>
+            <div id="contenedor-testimonios"></div>
+            <a class="boton-youtube" href="#" target="_blank">Ver más testimonios</a>
         </section>
+
         <section id="recursos" class="seccion">
             <h2>Recursos en Argentina</h2>
-            <img src="imagen5.jpg" alt="Recursos en Argentina" style="max-width:100%;border-radius:12px;margin-bottom:1rem;">
+            <img src="imagen5.jpg" alt="Recursos en Argentina" class="img-seccion" />
             <ul>
                 <li><a href="https://www.argentina.gob.ar/salud/cancer/prevencion/mama" target="_blank">Ministerio de Salud - Cáncer de Mama</a></li>
                 <li><a href="https://www.lalcec.org.ar/" target="_blank">LALCEC</a></li>
                 <li><a href="https://www.macma.org.ar/" target="_blank">MACMA</a></li>
             </ul>
         </section>
+
         <section id="contacto" class="seccion">
             <h2>Dejanos tu mensaje</h2>
-            <img src="imagen6.jpg" alt="Contacto y apoyo" style="max-width:100%;border-radius:12px;margin-bottom:1rem;">
+            <img src="imagen6.jpg" alt="Contacto y apoyo" class="img-seccion" />
             <form id="form-contacto">
-                <input type="text" name="nombre" placeholder="Tu nombre" required>
-                <input type="email" name="email" placeholder="Tu email" required>
+                <input type="text" name="nombre" placeholder="Tu nombre" required />
+                <input type="email" name="email" placeholder="Tu email" required />
                 <textarea name="mensaje" placeholder="Tu mensaje de apoyo o consulta" required></textarea>
                 <button type="submit">
-                    <svg class="icono-svg azul" viewBox="0 0 24 24"><path d="M2 21l21-9-21-9v7l15 2-15 2z"/></svg>
+                    <svg class="icono-svg azul" viewBox="0 0 24 24"><path d="M2 21l21-9-21-9v7l15 2-15 2z" /></svg>
                     Enviar
                 </button>
                 <p id="mensaje-exito" class="oculto">¡Gracias por tu mensaje!</p>
             </form>
         </section>
     </main>
+
     <footer>
         <p>
             © 2025 Unidas por la Vida. Juntas somos más fuertes.
             <svg class="icono-svg rosa" viewBox="0 0 24 24" width="24" height="24" style="vertical-align:middle;">
-                <circle cx="12" cy="12" r="10" fill="#ec407a" opacity="0.15"/>
-                <path d="M12 4c2.5 0 4.5 2 4.5 4.5S14.5 13 12 13 7.5 11 7.5 8.5 9.5 4 12 4zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z" fill="#ec407a"/>
-                <path d="M12 15c-2 0-4 1-4 2v1h8v-1c0-1-2-2-4-2z" fill="#ad1457"/>
+                <circle cx="12" cy="12" r="10" fill="#ec407a" opacity="0.15" />
+                <path d="M12 4c2.5 0 4.5 2 4.5 4.5S14.5 13 12 13 7.5 11 7.5 8.5 9.5 4 12 4zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z" fill="#ec407a" />
+                <path d="M12 15c-2 0-4 1-4 2v1h8v-1c0-1-2-2-4-2z" fill="#ad1457" />
             </svg>
         </p>
     </footer>
+
     <script src="interactivo.js"></script>
 </body>
 </html>
-
