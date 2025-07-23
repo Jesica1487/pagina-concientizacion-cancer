@@ -1,14 +1,23 @@
+document.addEventListener('DOMContentLoaded', () => {
+    mostrarTipDelDia();
+    animarContador('contador-apoyo', 1245, 1200);
+    mostrarTestimonios();
+    configurarNavegacion();
+    configurarFormulario();
+});
+
 function mostrarSeccion(id) {
     document.querySelectorAll('.seccion').forEach(sec => {
-        sec.classList.remove('activa');
-        sec.classList.remove('fade-in');
+        sec.classList.remove('activa', 'fade-in');
     });
+
     const seccion = document.getElementById(id);
-    seccion.classList.add('activa');
-    setTimeout(() => seccion.classList.add('fade-in'), 10);
+    if (seccion) {
+        seccion.classList.add('activa');
+        setTimeout(() => seccion.classList.add('fade-in'), 10);
+    }
 }
 
-// Animación contador
 function animarContador(id, valorFinal, duracion) {
     const el = document.getElementById(id);
     let inicio = 0;
@@ -23,7 +32,6 @@ function animarContador(id, valorFinal, duracion) {
     }, 20);
 }
 
-// Tip del día aleatorio
 const tips = [
     "Realizá el autoexamen mamario una vez al mes.",
     "Consultá a tu médico ante cualquier cambio.",
@@ -32,48 +40,65 @@ const tips = [
     "Compartí información confiable sobre prevención.",
     "No postergues tus controles médicos."
 ];
+
 function mostrarTipDelDia() {
     const tip = tips[Math.floor(Math.random() * tips.length)];
-    document.getElementById('tip-dia').textContent = tip;
+    const tipElemento = document.getElementById('tip-dia');
+    if (tipElemento) {
+        tipElemento.textContent = tip;
+    }
 }
 
-// Testimonios con foto (puedes agregar más en el HTML)
 const testimonios = [
     {
         nombre: "Ana, Córdoba",
         texto: "Nunca imaginé la fuerza que tenía hasta que la vida me puso a prueba. Hoy celebro cada día.",
-        foto: "testimonio1.jpg"
+        foto: "imagen1.jpg"
     },
     {
         nombre: "Laura, Buenos Aires",
         texto: "El apoyo de mi familia y amigas fue fundamental. No estás sola.",
-        foto: "testimonio2.jpg"
+        foto: "imagen6.jpg"
     }
 ];
+
 function mostrarTestimonios() {
-    const contenedor = document.getElementById('testimonios-con-foto');
-    contenedor.innerHTML = '';
-    testimonios.forEach(t => {
-        const div = document.createElement('div');
-        div.className = 'testimonio-foto';
-        div.innerHTML = `
-            <img src="${t.foto}" alt="${t.nombre}">
-            <blockquote>${t.texto}</blockquote>
-            <span>${t.nombre}</span>
-        `;
-        contenedor.appendChild(div);
+    const contenedor = document.getElementById('contenedor-testimonios');
+    if (contenedor) {
+        contenedor.innerHTML = '';
+        testimonios.forEach(t => {
+            const div = document.createElement('div');
+            div.className = 'testimonio';
+            div.innerHTML = `
+                <img src="${t.foto}" alt="Testimonio de ${t.nombre}">
+                <blockquote>"${t.texto}"</blockquote>
+                <p class="nombre-testimonio">- ${t.nombre}</p>
+            `;
+            contenedor.appendChild(div);
+        });
+    }
+}
+
+function configurarNavegacion() {
+    const botones = document.querySelectorAll('nav button');
+    botones.forEach(boton => {
+        const seccionId = boton.getAttribute('data-seccion');
+        boton.addEventListener('click', () => mostrarSeccion(seccionId));
     });
 }
 
-// Ejecutar al cargar
-window.addEventListener('DOMContentLoaded', () => {
-    mostrarTipDelDia();
-    animarContador('contador-apoyo', 1245, 1200); // Número ejemplo
-    mostrarTestimonios();
-});
+function configurarFormulario() {
+    const formulario = document.getElementById('form-contacto');
+    const mensajeExito = document.getElementById('mensaje-exito');
 
-document.getElementById('form-contacto').addEventListener('submit', function(e) {
-    e.preventDefault();
-    document.getElementById('mensaje-exito').classList.remove('oculto');
-    this.reset();
-});
+    if (formulario && mensajeExito) {
+        formulario.addEventListener('submit', function (e) {
+            e.preventDefault();
+            mensajeExito.classList.remove('oculto');
+            formulario.reset();
+            setTimeout(() => {
+                mensajeExito.classList.add('oculto');
+            }, 3000);
+        });
+    }
+}
