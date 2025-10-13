@@ -58,7 +58,14 @@
             <h2>¿Qué es el cáncer de mama?</h2>
             <img src="imagen2.jpg" alt="Información sobre cáncer de mama" class="img-seccion" />
             <p>El cáncer de mama es el tipo de cáncer más frecuente en las mujeres argentinas. La detección temprana salva vidas. Informate, cuidate y compartí este mensaje.</p>
-            <a class="boton-youtube" href="#" target="_blank">Ver video informativo en YouTube</a>
+
+            <!-- contenedor para video embebido (inicialmente oculto) -->
+            <div id="info-video" class="video-container oculto"></div>
+
+            <!-- botón que mostrará/ocultará el video en la misma página (Shorts) -->
+            <button id="mostrar-video-info" class="boton-youtube" type="button" data-video-id="EzXFmAQbIaA">
+                Ver video
+            </button>
         </section>
 
         <section id="ayuda" class="seccion">
@@ -81,7 +88,19 @@
         <section id="historias" class="seccion">
             <h2>Historias de esperanza</h2>
             <div id="contenedor-testimonios"></div>
-            <a class="boton-youtube" href="#" target="_blank">Ver más testimonios</a>
+
+            <!-- Reemplazado: enlace externo por botón que mostrará el video en la misma página -->
+    <blockquote>
+        “El apoyo de mi familia y amigas fue fundamental. No estás sola.” – Laura, Buenos Aires
+    </blockquote>
+
+    <!-- contenedor para mostrar el video en la misma página (inicialmente oculto) -->
+    <div id="historias-mas-video" class="video-container oculto"></div>
+
+    <!-- botón para insertar/ocultar el video embebido (video solicitado) -->
+    <button id="mostrar-video-mas" class="boton-youtube" type="button" data-video-id="06A37k5hFBk">
+        Ver más testimonios
+    </button>
         </section>
 
         <section id="recursos" class="seccion">

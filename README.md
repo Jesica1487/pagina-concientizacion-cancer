@@ -24,3 +24,6 @@ Esta página web tiene como objetivo crear conciencia sobre el cáncer de mama e
 1. Clonar este repositorio:
    ```bash
    git clone https://github.com/Jesica1487/PROYECTO.git
+
+## MEJORAS:
+# 1 RESCATAR VIDEOS QUE APAREZCAN INCLUIDOS EN LA PAGINA.

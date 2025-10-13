@@ -102,3 +102,50 @@ function configurarFormulario() {
         });
     }
 }
+
+// Inserta/quita un iframe de YouTube en el contenedor indicado
+function toggleEmbeddedVideo(videoId, containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    const existing = container.querySelector('iframe');
+    if (existing) {
+        // quitar video
+        container.innerHTML = '';
+        container.classList.add('oculto');
+        return;
+    }
+    // cerrar otros contenedores de video visibles
+    document.querySelectorAll('.video-container').forEach(c => {
+        if (c.id !== containerId) { c.innerHTML = ''; c.classList.add('oculto'); }
+    });
+    // crear iframe embebido (usar mute=1 para permitir autoplay tras interacción)
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube.com/embed/${videoId}?rel=0&autoplay=1&mute=1&modestbranding=1`;
+    iframe.title = 'Video embebido';
+    iframe.frameBorder = '0';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; autoplay';
+    iframe.allowFullscreen = true;
+    iframe.loading = 'lazy';
+    container.innerHTML = '';
+    container.appendChild(iframe);
+    container.classList.remove('oculto');
+}
+
+// Registrar listeners para los botones de video (asegura que existan)
+document.addEventListener('DOMContentLoaded', () => {
+    const btnInfo = document.getElementById('mostrar-video-info');
+    if (btnInfo) {
+        btnInfo.addEventListener('click', () => {
+            const vid = btnInfo.getAttribute('data-video-id');
+            toggleEmbeddedVideo(vid, 'info-video');
+        });
+    }
+
+    const btnMas = document.getElementById('mostrar-video-mas');
+    if (btnMas) {
+        btnMas.addEventListener('click', () => {
+            const vid = btnMas.getAttribute('data-video-id');
+            toggleEmbeddedVideo(vid, 'historias-mas-video');
+        });
+    }
+});
